@@ -1,0 +1,399 @@
+/* Color ------------------------------------------- */
+
+:root {
+  --color-invalid: #e50914;
+  --color-invalid-hover: #f11722;
+  --color-valid: rgb(13, 150, 65);
+  --color-forgot: #0071eb;
+  --color-input: #333333;
+  --color-bg: rgba(0, 0, 0, 0.73);
+  --color-backdrop: rgba(0, 0, 0, 0.563);
+}
+
+/* Box Sizing -------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Text, Tag Style --------------------------------- */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 0.84rem;
+  font-weight: 300;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+p,
+span {
+  font-weight: 300;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/26c35d01-db23-4f28-b2eb-42490d7f4002/ID-id-20221219-popsignuptwoweeks-perspective_alpha_website_large.jpg") center center/cover no-repeat;
+  position:relative;
+}
+body:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--color-backdrop);
+  z-index: -1;
+}
+
+/* Text Style -------------------------------------- */
+
+.text-white {
+  color: white;
+}
+.text-gray {
+  color: gray;
+}
+.text-terms {
+  font-size: 0.8rem;
+  color: grey;
+}
+.text-terms-1 {
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--color-forgot);
+}
+.text-underline {
+  cursor: pointer;
+}
+.text-underline:hover {
+  text-decoration: underline;
+}
+.text-underline-1 {
+  font-size: 0.8rem;
+  color: gray;
+}
+.text-underline-1:hover {
+  text-decoration: underline;
+}
+.text-underline-2 {
+  color: white;
+}
+.text-underline-2:hover {
+  text-decoration: underline;
+}
+.text-error {
+  font-size: 0.8rem;
+  color: orange;
+  display: none;
+}
+
+/* Spacing ----------------------------------------- */
+
+.margin-top {
+  margin-top: 1rem;
+}
+.margin-top-1 {
+  margin-top: 1.4rem;
+}
+.margin-top-2 {
+  margin-top: 2.4rem;
+}
+.margin-bottom {
+  margin-bottom: 1rem;
+}
+.margin-bottom-1 {
+  margin-bottom: 1.4rem;
+}
+.margin-block {
+  margin-block: 1rem;
+}
+.margin-block-1 {
+  margin-block: 1.4rem;
+}
+.margin-inline {
+  margin-inline: auto;
+}
+
+/* Button ----------------------------------------- */
+
+button,
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: inherit;
+  font-weight: inherit;
+  padding: 1.1em;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  height: 3.2rem;
+  max-width: 100%;
+}
+.btn-login {
+  background: var(--color-invalid);
+  margin-top: 3rem;
+  width: 100%;
+}
+.btn-login:hover {
+  background-color: var(--color-invalid-hover);
+}
+
+/* Logo ------------------------------------------ */
+
+.logo-center {
+  width: 10rem;
+}
+
+/* Nav ------------------------------------------- */
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.4rem 3.2rem;
+  z-index: 2;
+}
+.nav-2 {
+  justify-content: center;
+}
+
+/* Container ------------------------------------ */
+
+.login {
+  display: grid;
+  min-height: 86vh;
+    place-content: center;
+}
+.login-container {
+  margin-block-end: 2rem;
+  padding: 3rem;
+  max-width: 28rem;
+  border-radius: 0.4rem;
+  background: var(--color-bg);
+}
+
+/* Input Field & State--------------------------- */
+
+::placeholder {
+  color: transparent;
+}
+::-ms-input-placeholder {
+  color: transparent;
+}
+label {
+  color: white;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+.input {
+  position: relative;
+}
+.input-field {
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-radius: 4px;
+  padding-block: 1.8em 1em;
+  width: 100%;
+  background-color: var(--color-input);
+  height: 3.2rem;
+  padding-inline: 1rem;
+  color: white;
+}
+.input-label {
+  display: grid;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: gray;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+.input-field:focus {
+  border: 1px solid var(--color-forgot);
+}
+.input-field:focus ~ .label-size,
+.input-field:not(:placeholder-shown) ~ .label-size {
+  top: 0.6rem;
+  left: 1.06rem;
+  font-size: 0.6em;
+}
+.input-field:valid {
+  border: 2px solid var(--color-valid);
+}
+.input-field:not(:placeholder-shown):invalid {
+  border-bottom: 3px solid orange;
+}
+.input-field:not(:placeholder-shown):invalid ~ .text-error {
+  display: block;
+}
+
+/* Remember -------------------------------------- */
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: space-between;
+}
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.remember-input {
+  appearance: none;
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gray;
+}
+.remember-input::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  color: black;
+  display: none;
+}
+.remember-input:checked {
+  background-color: white;
+  border: 1px solid white;
+}
+.remember-input:checked::after {
+  display: block;
+}
+
+/* Footer ----------------------------------------- */
+
+.footer {
+  padding: 3rem;
+}
+.footer-container {
+  display: grid;
+  max-width: 50rem;
+  gap: 1.6rem;
+  color: gray;
+}
+.footer-black {
+  background-color: black;
+}
+.links {
+  display: flex;
+  line-height: 1.7;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Language Option ------------------------------ */
+
+.language {
+  position: relative;
+}
+.language-select {
+  appearance: none;
+  cursor: pointer;
+  height: 2.4rem;
+  max-width: 12rem;
+  border-radius: 0.2rem;
+  padding-inline: 2.4rem;
+  outline: none;
+  color: gray;
+  background-color: transparent;
+}
+.language-icon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+.globe {
+  position: absolute;
+  left: 1rem;
+}
+.chevron {
+  position: absolute;
+  left: 10rem;
+}
+
+/* Media Query ------------------------------------- */
+
+/* Nav Media Query */
+
+@media (320px <= width <= 640px) {
+  .nav {
+    padding-inline: 2rem;
+  }
+  .logo {
+    width: 6rem;
+  }
+}
+
+/* Body Media Query */
+
+@media (320px <= width <= 640px) {
+  body {
+    background: black;
+  }
+  .login-container {
+    margin-top: -1rem;
+    max-width: 100%;
+  }
+  .google {
+    max-width: 28rem;
+  }
+}
+@media (320px <= width <= 450px) {
+  .login-container {
+    padding-inline: 2rem;
+  }
+  .google {
+    max-width: 24rem;
+  }
+}
+
+/* Footer Media Query */
+
+@media (320px <= width <= 640px) {
+  .footer {
+    padding-inline: 2rem;
+    border-top: 2px solid gray;
+  }
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (320px <= width <= 450px) {
+  .links {
+    display: block;
+    line-height: 2;
+  }
+}
+
+@media (min-width: 2048px) {
+  body {
+    zoom:2;
+  }
+}

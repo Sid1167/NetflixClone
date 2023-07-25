@@ -1,0 +1,261 @@
+/* Color ------------------------------------------- */
+
+:root {
+  --color-invalid: #e50914;
+  --color-invalid-hover: #f11722;
+  --color-flag: rgb(232, 225, 225);
+  --color-footer-bg: #f3f3f3;
+}
+
+/* Box Sizing -------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Text, Tag Style --------------------------------- */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 0.84rem;
+  font-weight: 300;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+p,
+span {
+  font-weight: 300;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Text Style -------------------------------------- */
+
+.text-check {
+  font-size: 1.6rem;
+  color: var(--color-invalid);
+}
+.text-center {
+  text-align: center;
+}
+.text-terms {
+  font-size: 0.8rem;
+  color: grey;
+  max-width: 49rem;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+.icon-circle-2 {
+  padding: 0.6rem;
+  border: 3px solid var(--color-invalid);
+  border-radius: 100%;
+  margin-bottom: 2rem;
+  color: var(--color-invalid);
+}
+.text-underline {
+  cursor: pointer;
+}
+.text-underline:hover {
+  text-decoration: underline;
+}
+
+/* Spacing ----------------------------------------- */
+
+.margin-top {
+  margin-top: 1rem;
+}
+.margin-top-1 {
+  margin-top: 1.4rem;
+}
+.margin-inline {
+  margin-inline: auto;
+}
+
+/* Button ----------------------------------------- */
+
+button,
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: inherit;
+  font-weight: inherit;
+  padding: 1.1em;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  height: 3.2rem;
+  max-width: 100%;
+}
+.btn-wide {
+  font-size: 1.6em;
+  height: 4rem;
+  background: var(--color-invalid);
+  width: 100%;
+}
+.btn-logout {
+  font-weight: 600;
+  color: black;
+}
+.btn-wide:hover {
+  background-color: var(--color-invalid-hover);
+}
+
+/* Logo ------------------------------------------ */
+
+.logo {
+  margin-top: 0.4rem;
+  width: 8rem;
+}
+
+/* Nav ------------------------------------------- */
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.4rem 3.2rem;
+  z-index: 2;
+}
+.nav-3 {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-flag);
+}
+
+/* Container ------------------------------------- */
+
+.main-container {
+  display: grid;
+  place-content: center;
+  min-height: 67vh;
+  padding: 2rem;
+  max-width: 30rem;
+  animation: form ease-in-out 0.6s;
+}
+
+.plan-feature {
+  display: grid;
+  gap: 0.6rem;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Footer ----------------------------------------- */
+
+.footer {
+  padding: 3rem;
+}
+.footer-container {
+  display: grid;
+  max-width: 50rem;
+  gap: 1.6rem;
+  color: gray;
+}
+.footer-gray {
+  background-color: var(--color-footer-bg);
+  border-top: 1px solid var(--color-flag);
+}
+.links {
+  display: flex;
+  line-height: 1.7;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Language Option ------------------------------ */
+
+.language {
+  position: relative;
+}
+.language-select {
+  appearance: none;
+  cursor: pointer;
+  height: 2.4rem;
+  max-width: 12rem;
+  border-radius: 0.2rem;
+  padding-inline: 2.4rem;
+  outline: none;
+  color: gray;
+  background-color: transparent;
+}
+.language-icon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+.globe {
+  position: absolute;
+  left: 1rem;
+}
+.chevron {
+  position: absolute;
+  left: 10rem;
+}
+
+/* Animation --------------------------------------- */
+
+@keyframes form {
+  from {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Media Query ------------------------------------- */
+
+/* Nav Media Query */
+
+@media (320px <= width <= 640px) {
+  .nav {
+    padding-inline: 2rem;
+  }
+  .logo {
+    width: 6rem;
+  }
+}
+
+/* Footer Media Query */
+
+@media (320px <= width <= 640px) {
+  .footer {
+    padding-inline: 2rem;
+  }
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (320px <= width <= 450px) {
+  .links {
+    display: block;
+    line-height: 2;
+  }
+}
